@@ -1,2 +1,6 @@
 # se-week06-site
-
+<!doctype html>
+<meta charset="utf-8">
+<title>自己紹介</title>
+<h1>自己紹介</h1>
+<p>授業で作成したページです。</p>
