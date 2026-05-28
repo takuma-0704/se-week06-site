@@ -147,4 +147,205 @@
         /* Works Section */
         .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px,
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .work-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .work-img {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(45deg, #2980b9, #8e44ad);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .work-img.img2 { background: linear-gradient(45deg, #16a085, #f39c12); }
+        .work-img.img3 { background: linear-gradient(45deg, #c0392b, #8e44ad); }
+
+        .work-info {
+            padding: 20px;
+        }
+
+        .work-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .work-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Reflection Section */
+        .reflection-content {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+                padding: 10px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 15px 0;
+            }
+            
+            .container {
+                padding: 40px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">MyPortfolio</a>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#reflection">Reflection</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <div class="avatar">👤</div>
+                <h3>Web Developer / Creator</h3>
+                <p style="margin-top: 15px; color: #555;">
+                    デザインとプログラミングに興味があり、シンプルで使いやすいWebサイトの制作を心がけています。
+                    新しい技術を学ぶことが好きで、日々のインプットとアウトプットを大切にしています。
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">UI/UX Design</div>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Problem Solving</div>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2>Works</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-img">Project Alpha</div>
+                    <div class="work-info">
+                        <h3>コーポレートサイト</h3>
+                        <p>架空の企業のWebサイト。レスポンシブデザインと、読みやすさを重視したタイポグラフィを実装しました。</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-img img2">Project Beta</div>
+                    <div class="work-info">
+                        <h3>タスク管理アプリ</h3>
+                        <p>JavaScriptを用いたシンプルなTodoアプリ。データのローカル保存機能と直感的なUIを備えています。</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-img img3">Project Gamma</div>
+                    <div class="work-info">
+                        <h3>ランディングページ</h3>
+                        <p>サービスの魅力を伝える1ペラのランディングページ。CSSアニメーションを活用し、動きのある表現を取り入れました。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection">
+            <h2>Reflection</h2>
+            <div class="reflection-content">
+                <p>
+                    これまでWeb制作を学んでいく中で、単にコードを書くこと以上に「使う人にとってどう見えるか、どう機能するか」を考えることの重要性を実感しました。<br><br>
+                    エラーに直面して手が止まることもありましたが、公式ドキュメントを読み解き、一つずつ課題を解決するプロセスを通じて、論理的思考力と粘り強さを身につけることができたと感じています。今後は、さらにアクセシビリティへの理解を深め、より多くの人にとって使いやすいプロダクトを生み出せるよう、継続して学習に取り組んでいきます。
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MyPortfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // スマホ用メニューの開閉処理
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('mobile-menu');
+            const navList = document.getElementById('nav-list');
+            const navLinks = navList.querySelectorAll('a');
+
+            // ハンバーガーメニューのクリックイベント
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+
+            // メニューリンクをクリックした際にメニューを閉じる
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
